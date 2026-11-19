@@ -125,7 +125,7 @@ function Client({data,add,refresh}){
 
 function Barber({data,add,del}){
  const [auth,setAuth]=useState(false),[pin,setPin]=useState(''),[err,setErr]=useState(false);
- const days=workDays(),[day,setDay]=useState(days[0]);
+ const days=workDays(),[day,setDay]=useState(days);
  if(!auth)return html`<div class=${card+' mt-6 text-center'}>
   <div class="text-4xl">🔒</div><h2 class=${'mt-2 text-xl '+GOLD}>Acceso del barbero</h2>
   <input type="password" inputmode="numeric" maxlength="6" value=${pin} onInput=${e=>{setPin(e.target.value);setErr(false)}} placeholder="PIN"
