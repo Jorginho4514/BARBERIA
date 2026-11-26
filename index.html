@@ -68,20 +68,7 @@ function load(){try{const r=localStorage.getItem('barber-v2');if(r)return JSON.p
 function save(n){try{localStorage.setItem('barber-v2',JSON.stringify(n))}catch(e){}}
 
 /* ---- Notificación push (ntfy.sh) ---- *
-async function notify(b) {
-  try {
-    await fetch('https://ntfy.sh/' + CONFIG.NTFY_TOPIC, {
-      method: 'POST',
-      keepalive: true,
-      headers: {
-        'Title': 'Nueva Cita - Barberia Jorge Sanchez',
-        'Priority': 'high',
-        'Tags': 'scissors,calendar'
-      },
-      body: 'Cliente: ' + b.nombre + '\nServicio: ' + sname(b.servicio) + '\nDía: ' + label(b.fecha) + '\nHora: ' + b.hora + '\nTel: ' + b.telefono
-    });
-  } catch (e) {}
-}
+async function notify(b){try{await fetch('https://ntfy.sh/' + CONFIG.NTFY_TOPIC,{method:'POST',keepalive:true,headers:{'Title':'Nueva Cita - Barberia Jorge Sanchez','Priority':'high','Tags':'scissors,calendar'},body:['Cliente: '+b.nombre,'Servicio: '+sname(b.servicio),'Dia: '+label(b.fecha),'Hora: '+b.hora,'Tel: '+b.telefono].join('\n')})}catch(e){}}
 function Days({days,day,setDay,data=[]}){
  const now=new Date(),today=key(now);
  const libres=d=>HRS.filter(t=>!data.some(b=>b.fecha===d&&b.hora===t)&&!(d===today&&parseInt(t)<=now.getHours())).length;
