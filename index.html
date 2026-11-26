@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="pizarra">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#343C48">
-<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#FAF8F5">
+<meta name="color-scheme" content="only light">
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -23,25 +23,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
 <style>
-/* ===== PALETAS =====
-   Para cambiar de tema, edita data-theme en la etiqueta <html>:
-   "pizarra" = gris pizarra iluminado con letras claras y botones dorados (por defecto)
-   "crema"   = fondo blanco-crema con letras oscuras y detalles dorados      */
-:root,:root[data-theme="pizarra"]{
- color-scheme:dark;
- --bg:#343C48; --card:#424B59; --sel:#554F3C; --input:#2E3540;
- --line:#5C6677; --line2:#74808F; --lineoff:#4A5361;
- --text:#F7F3E8; --soft:#E3DFD3; --dim:#BCC3CE; --off:#8E98A7;
- --gold:#D4AF37; --gold-text:#E8C75A; --gold-soft:rgba(212,175,55,.65);
- --on-gold:#1B1A14; --on-gold-soft:rgba(27,26,20,.8);
- --danger:#FFA5A5; --danger-line:rgba(255,150,150,.65)}
-:root[data-theme="crema"]{
- color-scheme:light;
- --bg:#FBF6EA; --card:#FFFFFF; --sel:#FFF1C7; --input:#FFFFFF;
- --line:#E2D6B8; --line2:#C9B98F; --lineoff:#EFE7D2;
- --text:#2A2620; --soft:#4A443A; --dim:#645D50; --off:#A59C88;
- --gold:#D4AF37; --gold-text:#7D5F0B; --gold-soft:rgba(176,138,20,.7);
- --on-gold:#1F1A0B; --on-gold-soft:rgba(31,26,11,.8);
+/* ===== PALETA: tema claro (crema suave, tarjetas blancas, textos carbón, detalles dorados) ===== */
+:root{
+ color-scheme:only light;
+ --bg:#FAF8F5; --card:#FFFFFF; --sel:#FFF4D1; --input:#FFFFFF;
+ --line:#E6E2DB; --line2:#D3CEC4; --lineoff:#EFECE6;
+ --text:#1E1E1E; --soft:#333333; --dim:#58554F; --off:#A9A49A;
+ --gold:#D4AF37; --gold-text:#7A5C09; --gold-soft:rgba(176,138,20,.75);
+ --on-gold:#1A1A1A; --on-gold-soft:rgba(26,26,26,.8);
  --danger:#B42318; --danger-line:rgba(180,35,24,.55)}
 
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
